@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#medicine {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#medicine td, #medicine th {
+  border: 1px solid rgba(84, 16, 110, 0.733);
+  padding: 8px;
+}
+
+#medicine tr:nth-child(even){background-color: #edeff0;}
+
+#medicine tr:hover {background-color: rgb(226, 230, 231);}
+
+#medicine th {
+  padding-top: 15px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #191970;
+  color: white;
+}
+table#medicine  {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+h3 {
+  text-align: center;
+}
+body {
+  background-color: rgb(242, 245, 245);
+}
+  
+
+
+</style>
+</head>
+<body>
+
+<table id="medicine">
+  <h3>Purchase Details of customer</h3>
+  <tr>
+    <th>Product Id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Medicine Name</th>
+    <th>Description</th>
+    <th>Phone number</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th>Update</th>
+    <th>Delete</th>
+
+  </tr>
+  {% for d in cdata %}
+  <td>{{d.p_id}}</td>
+  <td>{{d.fname}}</td>
+  <td>{{d.lname}}</td>
+  <td>{{d.mname}}</td>
+  <td>{{d.desc}}</td>
+  <td>{{d.phone_no}}</td>
+  <td>{{d.price}}</td>
+  <td>{{d.quantity}}</td>
+  <td>{{d.total}}</td>
+  <td><a href="/shopapp/Updatecustpur?p_id={{d.p_id}}">Update</a></td>
+  <!-- <td><a href="/shopapp/dealerupdate{{d.phone_no}}/">Update</a></td> -->
+  <td><a href="/shopapp/custpurchdelete?p_id={{d.p_id}}">Delete</a></td> 
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/shopapp/" class="button">Back</a>
+</body>
+</html>

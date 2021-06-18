@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#customers td, #customers th {
+  border: 1px solid rgba(84, 16, 110, 0.733);
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #edeff0;}
+
+#customers tr:hover {background-color: rgb(226, 230, 231);}
+
+#customers th {
+  padding-top: 15px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #191970;
+  color: white;
+}
+table#customers  {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+h3 {
+  text-align: center;
+}
+body {
+  background-color: rgb(242, 245, 245);
+}
+  
+
+
+</style>
+</head>
+<body>
+
+<table id="customers">
+  <h3>Dealer Details</h3>
+  <tr>
+    <th>Dealer Name</th>
+    <th>Address</th>
+    <th>Contact Number</th>
+    <th>Email Id</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  {% for d in data %}
+  <td>{{d.dname}}</td>
+  <td>{{d.address}}</td>
+  <td>{{d.phone_no}}</td>
+  <td>{{d.email}}</td>
+  <td><a href="/shopapp/dealerupdate?phone_no={{d.phone_no}}">Update</a></td>
+  <!-- <td><a href="/shopapp/dealerupdate{{d.phone_no}}/">Update</a></td> -->
+  <td><a href="/shopapp/dealerdelete?phone_no={{d.phone_no}}">Delete</a></td> 
+</tr>
+{% endfor %}
+
+</table>
+<a href="/shopapp/" class="button">Back</a>
+
+</body>
+</html>

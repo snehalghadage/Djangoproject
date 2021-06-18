@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+      background-color: #F0FFFF;
+}
+* {box-sizing: border-box;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #40E0D0;
+  color: #212221;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3aa1e6;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:#dfa491;
+  padding: 20px;
+}
+
+form {
+  max-width: 60em;
+  margin: auto;
+  text-align: center;
+    
+ }
+</style>
+</head>
+<body>
+    <!-- <form action="/shopapp/UpdateRecord{{data.phone_no}}/" method="POST"> -->
+    <form action="/shopapp/UpdateCustomerRecord/?cid={{custdata.cid}}" method="POST">
+      {% csrf_token %}
+
+<h3>Update Customer Details</h3>
+
+<div class="container">
+  
+    <label for="cid">Customer Id</label>
+    <input type="text" id="cid" name="cid" value="{{custdata.cid}}">
+
+    <label for="fname">First Name</label>
+    <input type="text"  name="fname" value="{{custdata.fname}}">
+
+    <label for="lname">Last Name</label>
+    <input type="text"  name="lname" value="{{custdata.lname}}">
+
+    <label for="address">Address</label>
+    <input type="text"  name="address" value="{{custdata.address}}">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" value="{{custdata.email}}">
+
+    
+    <label for="phone_no">Contact Number</label>
+    <input type="text" name="phone_no" value="{{custdata.phone_no}}">
+
+
+
+    <input type="submit" id="btn" value="Update Record">
+
+    
+  </form>
+</div>
+<a href="/shopapp/" class="button">Back</a>
+</body>
+</html>

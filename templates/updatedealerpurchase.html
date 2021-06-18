@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+      background-color: #F0FFFF;
+}
+* {box-sizing: border-box;}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #40E0D0;
+  color: #212221;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3aa1e6;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:#dfa491;
+  padding: 20px;
+}
+
+form {
+  max-width: 60em;
+  margin: auto;
+  text-align: center;
+    
+ }
+</style>
+</head>
+<body>
+    <!-- <form action="/shopapp/UpdateRecord{{data.phone_no}}/" method="POST"> -->
+    <form action="/shopapp/Updtpurdealerrecord/?p_id={{dpurdata.p_id}}" method="POST">
+      {% csrf_token %}
+
+<h3>Update Purchase Details</h3>
+
+<div class="container">
+  
+    <label for="p_id">Product Id</label>
+    <input type="text" id="p_id" name="p_id" value="{{dpurdata.p_id}}">
+
+    <label for="mname">Medicine Name</label>
+    <input type="text"  name="mname" value="{{dpurdata.mname}}">
+
+    <label for="dname">Dealer Name</label>
+    <input type="text"  name="dname" value="{{dpurdata.dname}}">
+
+    <label for="desc">Description</label>
+    <input type="text"  name="desc" value="{{dpurdata.desc}}">
+
+    <label for="phone_no">Phone number</label>
+    <input type="text" name="phone_no" value="{{dpurdata.phone_no}}">
+
+
+    <label for="price">Price</label>
+    <input type="text" name="price" value="{{dpurdata.price}}">
+
+    
+    <label for="stock">Stock</label>
+    <input type="text" name="stock" value="{{dpurdata.stock}}">
+
+    <label for="total">Total bill</label>
+    <input type="text" name="total" value="{{dpurdata.total}}">
+
+    
+
+    <input type="submit" id="btn" value="Update Record">
+
+    
+  </form>
+</div>
+<a href="/shopapp/" class="button">Back</a>
+</body>
+</html>

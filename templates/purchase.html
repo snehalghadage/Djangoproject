@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+      background-color: #F0FFFF;
+}
+* {box-sizing: border-box;}
+
+input[type=text] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #40E0D0;
+  color: #212221;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3aa1e6;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:#dfa491;
+  padding: 20px;
+}
+form {
+
+    max-width: 50em;
+    margin: auto;
+    text-align: center;
+    
+ }
+ .button {
+  background-color: #40E0D0;
+  border: none;
+  color: #212221;
+  padding: 11px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 1px;
+  cursor: pointer;
+ }
+ .button:hover{
+   background-color: #3aa1e6;
+ }
+</style>
+</head>
+<body>
+    <form action="/shopapp/dealerpurchaseinsert/" method="post">
+        {% csrf_token %}
+
+<h3>Add Purchase Details</h3>
+
+<div class="container">
+  
+    <label for="p_id">Product Name</label>
+    <input type="text" id="p_id" name="p_id" placeholder="Product Id..">
+
+    <label for="mname">Medicine Name</label>
+    <input type="text" id="mname" name="mname" placeholder="Medicine Name..">
+    
+    <label for="dname">Dealer Name</label>
+    <input type="text" id="dname" name="dname" placeholder="Dealer Name..">
+    
+    <label for="desc">Description</label>
+    <input type="text" id="desc" name="desc" placeholder="Description..">
+
+    <label for="phone_no">Phone number</label>
+    <input type="text" id="phone_no" name="phone_no" placeholder="Phone number..">
+
+    <label for="price">Price</label>
+    <input type="text" id="price" name="price" placeholder="Price..">
+
+    <label for="stock">Stock</label>
+    <input type="text" id="stock" name="stock" placeholder="Stock..">
+
+   
+   
+
+    <input type="submit" value="Submit">
+
+    <a href="/shopapp/" class="button">Cancel</a>
+  </form>
+  <a href="/shopapp/" class="button">Back</a>
+</div>
+
+</body>
+</html>
